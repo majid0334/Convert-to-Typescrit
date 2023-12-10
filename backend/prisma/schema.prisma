@@ -1,0 +1,17 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@localhost:3306/todolist"
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  title     String
+  completed Boolean
+}
